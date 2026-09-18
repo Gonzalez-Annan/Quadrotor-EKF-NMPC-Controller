@@ -4,7 +4,7 @@
 % obvious pass/fail signal:
 %   1. Hover equilibrium      -- numeric assert
 %   2. Free fall              -- simulated vs. closed-form, plotted
-%   3. Pure roll torque       -- angle history + 3D body-frame snapshots
+%   3. Pure roll torque       -- roll/pitch/yaw overlay + position drift
 clear; clc; close all;
 
 params = getDefaultParams();
@@ -53,7 +53,7 @@ else
     fprintf('FAIL: deviates from analytic free fall\n');
 end
 
-%% TEST 3 -- Pure roll torque, visualized as a tipping body frame
+%% TEST 3 -- Pure roll torque: attitude isolation + resulting position drift
 fprintf('\n--- Test 3: Roll torque response (visual) ---\n');
 % Bias pattern chosen so tau_x (roll) != 0 while tau_y (pitch) and
 % tau_z (yaw) both come out to exactly zero -- see the torque equations
@@ -69,42 +69,55 @@ fprintf('Isolation check -- angular accel [p q r]dot = [%.4g %.4g %.4g] rad/s^2\
     xdot_check(11), xdot_check(12), xdot_check(13));
 fprintf('(only the first entry, roll, should be clearly nonzero)\n');
 
-tspan = [0 1.0];
+% tspan kept short enough that roll stays under 180 deg -- past that the
+% atan2-based angle extraction wraps to -180, which would look like a
+% discontinuity here even though nothing physically strange is happening.
+% (This wraparound is exactly the yaw-flip issue -- same atan2() root
+% cause -- your professor flagged for trajectory.m; see quat2eulerZYX.m.)
+tspan = [0 0.65];
 [t, X] = ode45(@(t,x) quadrotorDynamics(x, u_roll, params), tspan, x0);
 
-roll_deg = zeros(size(t));
+roll_deg  = zeros(size(t));
+pitch_deg = zeros(size(t));
+yaw_deg   = zeros(size(t));
 for i = 1:length(t)
-    q = X(i,7:10)';
-    roll_deg(i) = rad2deg(atan2(2*(q(1)*q(2)+q(3)*q(4)), 1-2*(q(2)^2+q(3)^2)));
+    eul = quat2eulerZYX(X(i,7:10)');
+    roll_deg(i)  = rad2deg(eul(1));
+    pitch_deg(i) = rad2deg(eul(2));
+    yaw_deg(i)   = rad2deg(eul(3));
 end
 
-figure('Name','Test 3: Roll Response');
+figure('Name','Test 3: Roll Isolation', 'Position', [100 100 800 700]);
+
 subplot(2,1,1);
-plot(t, roll_deg, 'LineWidth', 2); grid on;
-xlabel('Time [s]'); ylabel('Roll angle [deg]');
-title('Test 3a: Roll Angle Under Differential Thrust');
+plot(t, roll_deg,  'b-',  'LineWidth', 2.5); hold on;
+plot(t, pitch_deg, 'r--', 'LineWidth', 1.8);
+plot(t, yaw_deg,   'g-.', 'LineWidth', 1.8);
+plot(t, zeros(size(t)), 'k:'); grid on;
+xlabel('Time [s]'); ylabel('Angle [deg]');
+legend('Roll (should grow)', 'Pitch (should stay 0)', 'Yaw (should stay 0)', ...
+    'Location', 'northwest');
+title('Test 3a: Attitude -- Only Roll Should Move');
 
 subplot(2,1,2);
-hold on; grid on; axis equal; view(3);
-xlabel('X'); ylabel('Y'); zlabel('Z (down)');
-title('Test 3b: Body Frame Orientation Over Time (snapshots)');
-sample_idx = round(linspace(1, length(t), 6));
-colors = lines(numel(sample_idx));
-for k = 1:numel(sample_idx)
-    idx = sample_idx(k);
-    q = X(idx,7:10)';
-    R = quat2rotmCustom(q);
-    origin = [0.3*(k-1); 0; 0]; % offset snapshots sideways so they don't overlap
-    quiver3(origin(1),origin(2),origin(3), R(1,1),R(2,1),R(3,1), 0.2, ...
-        'Color', colors(k,:), 'LineWidth', 2);       % body x-axis
-    quiver3(origin(1),origin(2),origin(3), R(1,3),R(2,3),R(3,3), 0.2, ...
-        'Color', colors(k,:)*0.5, 'LineWidth', 1);   % body z-axis
-    text(origin(1),origin(2),origin(3)-0.05, sprintf('t=%.2fs', t(idx)), 'FontSize', 8);
-end
+plot(t, X(:,1), 'b-', 'LineWidth', 2); hold on;   % x position, continuous line
+plot(t, X(:,2), 'r-', 'LineWidth', 2);            % y position
+plot(t, X(:,3), 'g-', 'LineWidth', 2);            % z position
+grid on;
+xlabel('Time [s]'); ylabel('Position (NED) [m]');
+legend('x (should stay ~0)', 'y (drifts once tilted)', 'z (falls once tilted)', ...
+    'Location', 'northwest');
+title('Test 3b: Position Drift Caused By The Roll');
+
 saveas(gcf, 'test3_roll_response.png');
 
-fprintf('Inspect test3_roll_response.png: the roll angle should move\n');
-fprintf('monotonically away from zero and the body frames should visibly\n');
-fprintf('tip over. If roll stays near 0 or tips the wrong way relative to\n');
-fprintf('which rotors were biased up, the rotor sign convention needs a\n');
-fprintf('second look before anything else is built on top of it.\n');
+fprintf('Inspect test3_roll_response.png:\n');
+fprintf(' - Top: roll should rise smoothly away from 0; pitch and yaw\n');
+fprintf('   should stay flat at 0 the whole time. If either of those\n');
+fprintf('   moves, torque is leaking into the wrong axis -- go re-check\n');
+fprintf('   the bias pattern against the torque equations by hand.\n');
+fprintf(' - Bottom: x should stay ~0 (roll only rotates in the y-z plane);\n');
+fprintf('   y and z should start drifting once the tilt is large enough\n');
+fprintf('   that thrust noticeably points sideways instead of straight up.\n');
+fprintf('   This is expected physical coupling, not a bug -- the total\n');
+fprintf('   thrust magnitude never changed, only its direction did.\n');
