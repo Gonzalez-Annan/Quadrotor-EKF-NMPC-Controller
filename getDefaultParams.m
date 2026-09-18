@@ -31,6 +31,16 @@ function params = getDefaultParams()
     params.sigma_gyro   = 0.015;  % [rad/s]
     params.sigma_pos    = 0.02;   % [m]
 
+    % ASSUMPTION: Section 4 states accel/gyro bias follow a random walk
+    % (bdot_a = w_ba, bdot_g = w_bg) but does not give a numeric rate for
+    % w_ba / w_bg. These two values are our own choice (typical small
+    % MEMS-grade numbers) -- state this explicitly in the report rather
+    % than presenting them as given. Units: per-sqrt-second, since a
+    % random walk's variance grows linearly with time -> std grows with
+    % sqrt(time).
+    params.sigma_ba_rw = 0.001;   % [ (m/s^2) / sqrt(s) ] accel bias random-walk rate
+    params.sigma_bg_rw = 0.0002;  % [ (rad/s) / sqrt(s) ] gyro bias random-walk rate
+
     % --- Trajectory parameters (Section 3) ---
     params.traj.Ax  = 3.0;
     params.traj.Ay  = 2.0;

@@ -17,4 +17,13 @@ main_simulation
 - `test_quadrotorDynamics.m` — validates dynamics before EKF/NMPC depend on it
 - `generateTrajectory.m` — 3D lemniscate reference trajectory + analytic derivatives
 - `test_generate_trajectory.m` — validates trajectory shape, period, derivatives, and yaw continuity
-- `sensors.m`, `ekf.m`, `nmpc.m`, `plotting.m` — in progress
+- `simulateIMU.m` — noisy accel/gyro measurements with bias random walk (Section 4)
+- `simulateGNSS.m` — noisy GNSS position measurement (Section 4)
+- `normpdfCustom.m` — standalone Gaussian PDF, used only by test_sensors.m plots
+- `test_sensors.m` — validates IMU/GNSS noise statistics, bias drift, and sampling cadence
+- `ekf.m`, `nmpc.m`, `plotting.m` — in progress
+
+## Assumptions worth noting in the report
+- Section 4 specifies IMU bias follows a random walk but gives no numeric rate;
+  `getDefaultParams.m` documents the assumed values (`sigma_ba_rw`, `sigma_bg_rw`)
+  explicitly in its comments.
