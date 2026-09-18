@@ -1,0 +1,16 @@
+# MATLAB / Octave
+*.asv
+*.mat
+octave-workspace
+slprj/
+
+# generated outputs (regenerate, don't commit)
+results/figures/*.png
+results/logs/*
+!results/figures/.gitkeep
+!results/logs/.gitkeep
+
+# OS junk
+.DS_Store
+Thumbs.db
+Desktop.ini
