@@ -1,0 +1,211 @@
+{
+  "mass": 1.2,
+  "g": 9.81,
+  "J": [
+    0.0125,
+    0.0125,
+    0.022
+  ],
+  "dx": 0.225,
+  "dy": 0.225,
+  "ctau": 0.015,
+  "mix": [
+    [
+      1,
+      1,
+      1,
+      1
+    ],
+    [
+      -0.225,
+      -0.225,
+      0.225,
+      0.225
+    ],
+    [
+      -0.225,
+      0.225,
+      0.225,
+      -0.225
+    ],
+    [
+      -0.015,
+      0.015,
+      -0.015,
+      0.015
+    ]
+  ],
+  "thrustMin": 0.2,
+  "thrustMax": 5.5,
+  "tiltMax": 0.6108652381980153,
+  "rateMax": [
+    3.1415926535897931,
+    3.1415926535897931,
+    1.5707963267948966
+  ],
+  "hover": [
+    2.943,
+    2.943,
+    2.943,
+    2.943
+  ],
+  "dt": 0.01,
+  "physicsDt": 0.002,
+  "gnssDt": 0.05,
+  "controlDt": 0.05,
+  "duration": 60,
+  "seed": 6224,
+  "feedback": "truth",
+  "sensor": {
+    "accelSigma": 0.08,
+    "gyroSigma": 0.015,
+    "positionSigma": 0.02,
+    "accelBiasRW": 0.002,
+    "gyroBiasRW": 0.0002,
+    "initialAccelBias": [
+      0.025,
+      -0.02,
+      0.015
+    ],
+    "initialGyroBias": [
+      0.002,
+      -0.0015,
+      0.001
+    ]
+  },
+  "ekf": {
+    "initialPositionError": [
+      0.015,
+      -0.01,
+      0.01
+    ],
+    "initialVelocityError": [
+      0.02,
+      -0.01,
+      0.01
+    ],
+    "initialAttitudeError": [
+      0.0052359877559829881,
+      -0.0052359877559829881,
+      0.0087266462599716477
+    ],
+    "initialStd": [
+      0.05,
+      0.05,
+      0.05,
+      0.1,
+      0.1,
+      0.1,
+      0.034906585039886591,
+      0.034906585039886591,
+      0.034906585039886591,
+      0.08,
+      0.08,
+      0.08,
+      0.008,
+      0.008,
+      0.008
+    ],
+    "gnssGate": 16.27
+  },
+  "mpc": {
+    "horizon": 20,
+    "blocks": [
+      1,
+      1,
+      2,
+      3,
+      5,
+      8
+    ],
+    "inputMap": [
+      [
+        0.29999999999999988,
+        -0.01388888888888889,
+        -0.01388888888888889,
+        -0.36666666666666664
+      ],
+      [
+        0.3,
+        -0.01388888888888889,
+        0.01388888888888889,
+        0.36666666666666664
+      ],
+      [
+        0.3,
+        0.01388888888888889,
+        0.01388888888888889,
+        -0.36666666666666664
+      ],
+      [
+        0.3,
+        0.01388888888888889,
+        -0.01388888888888889,
+        0.36666666666666664
+      ]
+    ],
+    "maxIterations": 40,
+    "constraintTolerance": 1E-5,
+    "acceptTolerance": 0.0001,
+    "optimalityTolerance": 0.03,
+    "positionWeight": [
+      30,
+      30,
+      45
+    ],
+    "velocityWeight": [
+      5,
+      5,
+      8
+    ],
+    "attitudeWeight": 12,
+    "rateWeight": [
+      0.15,
+      0.15,
+      0.25
+    ],
+    "inputWeight": 0.03,
+    "slewWeight": 0.15,
+    "terminalMultiplier": 4,
+    "integrationSubsteps": 2,
+    "maxConsecutiveFailures": 5
+  },
+  "makePlots": true,
+  "makeVideo": false,
+  "figureVisible": "off",
+  "outputRoot": "C:\\Users\\hzy\\Documents\\Codex\\2026-09-20\\fe\\outputs\\quadrotor_matlab\\results",
+  "runName": "baseline_truth",
+  "ros": {
+    "domainID": 0,
+    "nodeName": "/matlab_quadrotor",
+    "imuTopic": "/quad/imu",
+    "positionTopic": "/quad/position",
+    "truthTopic": "/quad/truth",
+    "commandTopic": "/quad/thrust_cmd",
+    "timeout": 15,
+    "maxImuGap": 0.035,
+    "maxQueueLag": 0.15,
+    "worldFrame": "ENU",
+    "bodyFrame": "FLU",
+    "initialPosition": [
+      0,
+      0,
+      -2
+    ],
+    "initialVelocity": [
+      0,
+      0,
+      0
+    ],
+    "initialQuaternion": [
+      0.89442719099991586,
+      0,
+      0,
+      0.44721359549995793
+    ],
+    "warmupSeconds": 3,
+    "transitionSeconds": 4,
+    "requireTruth": false,
+    "commandType": "std_msgs/Float64MultiArray"
+  }
+}
