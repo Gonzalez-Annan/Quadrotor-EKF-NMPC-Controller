@@ -1,0 +1,6 @@
+function d=estimation_error(e,x,bias)
+% Truth-minus-nominal error in the EKF tangent coordinates.
+d=[x(1:3)-e.p;x(4:6)-e.v; ...
+    quad.Math.log(quad.Math.mul(quad.Math.conj(e.q),x(7:10))); ...
+    bias(1:3)-e.ba;bias(4:6)-e.bg];
+end
