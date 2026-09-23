@@ -1,0 +1,205 @@
+[
+  {
+    "path": ".gitignore",
+    "status": "byte-identical",
+    "originalSHA256": "E9A71AA2A5218234B6AF5D54EC2A7D1F1CEFC6DA52C82B81E0149E3E55039EF4",
+    "mergedSHA256": "E9A71AA2A5218234B6AF5D54EC2A7D1F1CEFC6DA52C82B81E0149E3E55039EF4",
+    "sourceUnchanged": true
+  },
+  {
+    "path": "ekf.m",
+    "status": "filled-empty-placeholder",
+    "originalSHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "mergedSHA256": "9EF16A9354747ABFC1F2772685D9DF2710B2B6AA348122042E127F1A06C6ED9E",
+    "sourceUnchanged": true
+  },
+  {
+    "path": "generateTrajectory.m",
+    "status": "byte-identical",
+    "originalSHA256": "A45A4A1F6A8A9AFA856DD52F4613D1AEE9843A5483B8121675B561338B77FE90",
+    "mergedSHA256": "A45A4A1F6A8A9AFA856DD52F4613D1AEE9843A5483B8121675B561338B77FE90",
+    "sourceUnchanged": true
+  },
+  {
+    "path": "getDefaultParams.m",
+    "status": "byte-identical",
+    "originalSHA256": "09761F82DC6F3863F6C162FE6F22441F736D2204FA17CFC9882F98F238623EA3",
+    "mergedSHA256": "09761F82DC6F3863F6C162FE6F22441F736D2204FA17CFC9882F98F238623EA3",
+    "sourceUnchanged": true
+  },
+  {
+    "path": "main_simulation.m",
+    "status": "filled-empty-placeholder",
+    "originalSHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "mergedSHA256": "24BB5EAEB8DA878E7CC06C5554DF81086E529166C77361DA275D0144D705099F",
+    "sourceUnchanged": true
+  },
+  {
+    "path": "nmpc.m",
+    "status": "filled-empty-placeholder",
+    "originalSHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "mergedSHA256": "4F64CC814E29AB172C84B301ABD74978558656D4C840DF8C88B00FDE13C54C35",
+    "sourceUnchanged": true
+  },
+  {
+    "path": "normpdfCustom.m",
+    "status": "byte-identical",
+    "originalSHA256": "8CC0123BF2263A9CB2185655793E046C0861013DBBA591661E6FE88D7A8EE11A",
+    "mergedSHA256": "8CC0123BF2263A9CB2185655793E046C0861013DBBA591661E6FE88D7A8EE11A",
+    "sourceUnchanged": true
+  },
+  {
+    "path": "plotting.m",
+    "status": "filled-empty-placeholder",
+    "originalSHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "mergedSHA256": "CFA4C8A3CF1F87D5403D2A87F538B1963564EA2F162BFD8EC9D72AF57BAB1E65",
+    "sourceUnchanged": true
+  },
+  {
+    "path": "quadrotorDynamics.m",
+    "status": "byte-identical",
+    "originalSHA256": "27C9986CBCE86391E0305367B83B6BA9FCF4A3EFC9EB5DD9EDAAABF2FD525A3D",
+    "mergedSHA256": "27C9986CBCE86391E0305367B83B6BA9FCF4A3EFC9EB5DD9EDAAABF2FD525A3D",
+    "sourceUnchanged": true
+  },
+  {
+    "path": "quat2eulerZYX.m",
+    "status": "byte-identical",
+    "originalSHA256": "CADF39817449D726BE326B415A7A2FC222F3ACFC6E96701291818ED19C395052",
+    "mergedSHA256": "CADF39817449D726BE326B415A7A2FC222F3ACFC6E96701291818ED19C395052",
+    "sourceUnchanged": true
+  },
+  {
+    "path": "quat2rotmCustom.m",
+    "status": "byte-identical",
+    "originalSHA256": "383B136C2C42989291D4C92FC8278331A32E444513F36A957A1C71D94442715E",
+    "mergedSHA256": "383B136C2C42989291D4C92FC8278331A32E444513F36A957A1C71D94442715E",
+    "sourceUnchanged": true
+  },
+  {
+    "path": "quatMultiplyCustom.m",
+    "status": "byte-identical",
+    "originalSHA256": "3EF5A9B81EF8C4F78239161F79567B91C0452E12A3CD1C192192E7686474BAD1",
+    "mergedSHA256": "3EF5A9B81EF8C4F78239161F79567B91C0452E12A3CD1C192192E7686474BAD1",
+    "sourceUnchanged": true
+  },
+  {
+    "path": "README.md",
+    "status": "byte-identical",
+    "originalSHA256": "73535C65EEA794076B09C3DE42ABC9299A754069737A743DB475BA19DE1E293E",
+    "mergedSHA256": "73535C65EEA794076B09C3DE42ABC9299A754069737A743DB475BA19DE1E293E",
+    "sourceUnchanged": true
+  },
+  {
+    "path": "simulateGNSS.m",
+    "status": "byte-identical",
+    "originalSHA256": "5E3EE7D44B68D568B0988FB68DF466AC5A1FBC262E87A7FFA911A7E6354680E8",
+    "mergedSHA256": "5E3EE7D44B68D568B0988FB68DF466AC5A1FBC262E87A7FFA911A7E6354680E8",
+    "sourceUnchanged": true
+  },
+  {
+    "path": "simulateIMU.m",
+    "status": "byte-identical",
+    "originalSHA256": "F0BBC753A4E9291BAF43F2876836F8613A9966384BAE14C3761F3A95DE2F4EF7",
+    "mergedSHA256": "F0BBC753A4E9291BAF43F2876836F8613A9966384BAE14C3761F3A95DE2F4EF7",
+    "sourceUnchanged": true
+  },
+  {
+    "path": "test_generate_trajectory.m",
+    "status": "byte-identical",
+    "originalSHA256": "2D04243A0C028A6BA32DED1DE090962A2AB5381066FC036930D8911CC4792387",
+    "mergedSHA256": "2D04243A0C028A6BA32DED1DE090962A2AB5381066FC036930D8911CC4792387",
+    "sourceUnchanged": true
+  },
+  {
+    "path": "test_quadrotorDynamics.m",
+    "status": "byte-identical",
+    "originalSHA256": "F9F789721F9ED5B944BA4C63BEE16FFB353DDDBFBAC3240895AE2DCABD9884A8",
+    "mergedSHA256": "F9F789721F9ED5B944BA4C63BEE16FFB353DDDBFBAC3240895AE2DCABD9884A8",
+    "sourceUnchanged": true
+  },
+  {
+    "path": "test_sensors.m",
+    "status": "byte-identical",
+    "originalSHA256": "B6D80EB9251833AC26472395D26AA68B22A15CCE2CEA632D43BCC84FDF9D2CB3",
+    "mergedSHA256": "B6D80EB9251833AC26472395D26AA68B22A15CCE2CEA632D43BCC84FDF9D2CB3",
+    "sourceUnchanged": true
+  },
+  {
+    "path": "EKF part\\ekf_init.m",
+    "status": "byte-identical",
+    "originalSHA256": "877684BA3218ADE5B517453EE95BAA877781BC3236EFAA801CC142437D6AD507",
+    "mergedSHA256": "877684BA3218ADE5B517453EE95BAA877781BC3236EFAA801CC142437D6AD507",
+    "sourceUnchanged": true
+  },
+  {
+    "path": "EKF part\\ekf_predict.m",
+    "status": "byte-identical",
+    "originalSHA256": "39C9CED8D9C356641643D3A0B6F98EEDA9FE16F3B20444AC31BFFF64A258E90C",
+    "mergedSHA256": "39C9CED8D9C356641643D3A0B6F98EEDA9FE16F3B20444AC31BFFF64A258E90C",
+    "sourceUnchanged": true
+  },
+  {
+    "path": "EKF part\\ekf_state.m",
+    "status": "byte-identical",
+    "originalSHA256": "ADC066ABDBB03D4445B21B2EBEE610F48D394110C41CB340053500A46F54922F",
+    "mergedSHA256": "ADC066ABDBB03D4445B21B2EBEE610F48D394110C41CB340053500A46F54922F",
+    "sourceUnchanged": true
+  },
+  {
+    "path": "EKF part\\ekf_update.m",
+    "status": "byte-identical",
+    "originalSHA256": "CBB15EA8B1971F52CE298C7E56BA3207BE5F4D6D08D120AE830A00CD3CFC8F74",
+    "mergedSHA256": "CBB15EA8B1971F52CE298C7E56BA3207BE5F4D6D08D120AE830A00CD3CFC8F74",
+    "sourceUnchanged": true
+  },
+  {
+    "path": "EKF part\\estimation_error.m",
+    "status": "byte-identical",
+    "originalSHA256": "0CDBEAEE90374A7B544F325BCB648DBF62D768318B0E7292A99DAB96DF3827E8",
+    "mergedSHA256": "0CDBEAEE90374A7B544F325BCB648DBF62D768318B0E7292A99DAB96DF3827E8",
+    "sourceUnchanged": true
+  },
+  {
+    "path": "EKF part\\quatExp.m",
+    "status": "byte-identical",
+    "originalSHA256": "E136EC5DA499CEE44622A790D820590AA43500C946DB9799DC01F278003A4800",
+    "mergedSHA256": "E136EC5DA499CEE44622A790D820590AA43500C946DB9799DC01F278003A4800",
+    "sourceUnchanged": true
+  },
+  {
+    "path": "EKF part\\quatLog.m",
+    "status": "byte-identical",
+    "originalSHA256": "E271D6075D971DC6C6B190B7CA30A7A866796203CCCFF15A837D3CA594951D49",
+    "mergedSHA256": "E271D6075D971DC6C6B190B7CA30A7A866796203CCCFF15A837D3CA594951D49",
+    "sourceUnchanged": true
+  },
+  {
+    "path": "EKF part\\skew3.m",
+    "status": "byte-identical",
+    "originalSHA256": "E4AD6492D98B27F9C6808FF432FA7D496CCF2A7F835ACCA3715638A7FDCE7407",
+    "mergedSHA256": "E4AD6492D98B27F9C6808FF432FA7D496CCF2A7F835ACCA3715638A7FDCE7407",
+    "sourceUnchanged": true
+  },
+  {
+    "path": "EKF part\\test_ekf.m",
+    "status": "byte-identical",
+    "originalSHA256": "5023DA4868C6B026EC367A56A13484C4E37E488837446AC6A70D33EA28DA421A",
+    "mergedSHA256": "5023DA4868C6B026EC367A56A13484C4E37E488837446AC6A70D33EA28DA421A",
+    "sourceUnchanged": true
+  },
+  {
+    "path": "results\\figures\\.gitkeep",
+    "status": "byte-identical",
+    "originalSHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "mergedSHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "sourceUnchanged": true
+  },
+  {
+    "path": "results\\logs\\.gitkeep",
+    "status": "byte-identical",
+    "originalSHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "mergedSHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "sourceUnchanged": true
+  }
+]

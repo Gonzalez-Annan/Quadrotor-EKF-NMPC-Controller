@@ -1,0 +1,60 @@
+{
+  "matlab": "26.1.0.3312084 (R2026a) Update 4",
+  "time": "2026-09-23 11:34:16",
+  "publicAPIs": true,
+  "ros": {
+    "passed": true,
+    "domain": 198,
+    "time": "2026-09-23 11:34:22"
+  },
+  "codeAnalyzer": [
+    {
+      "file": "C:\\Users\\hzy\\Documents\\Codex\\2026-09-20\\fe\\outputs\\quadrotor_merged\\test_sensors.m",
+      "messages": [
+        {
+          "id": "HIST",
+          "message": "建议不要使用 'hist'。请对代码进行相应更改后改用 'histogram'。",
+          "fix": 0,
+          "line": 57,
+          "column": [
+            21,
+            24
+          ]
+        },
+        {
+          "id": "HIST",
+          "message": "建议不要使用 'hist'。请对代码进行相应更改后改用 'histogram'。",
+          "fix": 0,
+          "line": 67,
+          "column": [
+            21,
+            24
+          ]
+        },
+        {
+          "id": "HIST",
+          "message": "建议不要使用 'hist'。请对代码进行相应更改后改用 'histogram'。",
+          "fix": 0,
+          "line": 91,
+          "column": [
+            21,
+            24
+          ]
+        }
+      ]
+    },
+    {
+      "file": "C:\\Users\\hzy\\Documents\\Codex\\2026-09-20\\fe\\outputs\\quadrotor_merged\\validate_merged_interfaces.m",
+      "messages": {
+        "id": "MSNU",
+        "message": "此处之前隐藏了一条代码分析器消息，但该消息不再产生。",
+        "fix": 1,
+        "line": 17,
+        "column": [
+          97,
+          107
+        ]
+      }
+    }
+  ]
+}

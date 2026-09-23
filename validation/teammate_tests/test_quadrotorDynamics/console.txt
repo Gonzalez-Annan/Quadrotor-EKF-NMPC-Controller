@@ -1,0 +1,20 @@
+--- Test 1: Hover equilibrium ---
+PASS: hover produces zero linear/angular acceleration
+
+--- Test 2: Free fall vs analytic solution ---
+Max deviation from analytic free fall: 3.553e-15 m
+PASS: matches analytic free fall
+
+--- Test 3: Roll torque response (visual) ---
+Isolation check -- angular accel [p q r]dot = [10.8 0 0] rad/s^2
+(only the first entry, roll, should be clearly nonzero)
+Inspect test3_roll_response.png:
+ - Top: roll should rise smoothly away from 0; pitch and yaw
+   should stay flat at 0 the whole time. If either of those
+   moves, torque is leaking into the wrong axis -- go re-check
+   the bias pattern against the torque equations by hand.
+ - Bottom: x should stay ~0 (roll only rotates in the y-z plane);
+   y and z should start drifting once the tilt is large enough
+   that thrust noticeably points sideways instead of straight up.
+   This is expected physical coupling, not a bug -- the total
+   thrust magnitude never changed, only its direction did.

@@ -1,0 +1,307 @@
+{
+  "matlab": "26.1.0.3312084 (R2026a) Update 4",
+  "started": "2026-09-23 11:29:49",
+  "integration": {
+    "inherited": {
+      "passed": [
+        "physics",
+        "rotations",
+        "trajectory",
+        "MPC gradients",
+        "EKF covariance",
+        "NMPC hover",
+        "ENU/FLU frames",
+        "Startup continuity",
+        "Constraint boundaries"
+      ],
+      "matlab": "26.1.0.3312084 (R2026a) Update 4",
+      "time": "2026-09-23 11:29:51"
+    },
+    "passed": [
+      "80 randomized plant/predictor derivative and RK4 comparisons",
+      "Trajectory passthrough including non-default parameters",
+      "100-step direct/adapter EKF equality and positive covariance",
+      "Sensor specific force and returned-bias timing"
+    ],
+    "matlab": "26.1.0.3312084 (R2026a) Update 4",
+    "time": "2026-09-23 11:29:51"
+  },
+  "original": [
+    {
+      "name": "test_quadrotorDynamics.m",
+      "passed": true
+    },
+    {
+      "name": "test_generate_trajectory.m",
+      "passed": true
+    },
+    {
+      "name": "test_sensors.m",
+      "passed": true
+    },
+    {
+      "name": "EKF part\\test_ekf.m",
+      "passed": true
+    }
+  ],
+  "smoke": {
+    "positionRMSE": 0.039154694209131327,
+    "positionMax": 0.067864924977524291,
+    "positionAxisRMSE": [
+      0.021884408029842269,
+      0.030802640227398308,
+      0.010264507723969075
+    ],
+    "estimatedPositionRMSE": 0.017147996728985503,
+    "maxAbsRollPitchDeg": [
+      4.8996191473660549,
+      3.7599772743665527
+    ],
+    "maxAbsBodyRatesDeg": [
+      13.949620237571928,
+      11.191047666267465,
+      46.264318118210895
+    ],
+    "minRotorThrust": [
+      2.7962210235282674,
+      2.7075501843534453,
+      2.758712629525911,
+      2.6884325337990793
+    ],
+    "maxRotorThrust": [
+      3.2015419706188051,
+      3.0353105709885058,
+      3.1969704245808277,
+      3.0686701855295615
+    ],
+    "rotorViolationSamples": 0,
+    "attitudeViolationSamples": 0,
+    "rateViolationSamples": 0,
+    "solveMean": 0.10185715499999999,
+    "solveMax": 0.1848823,
+    "solveP95": 0.1687704,
+    "deadlineMisses": 57,
+    "controlUpdates": 60,
+    "fallbackCount": 0,
+    "nonpositiveExitCount": 0,
+    "gnssRejected": 0,
+    "twoSigmaCoverage": [
+      0.98338870431893688,
+      1,
+      0.98338870431893688,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "finalTime": 3,
+    "seed": 6224,
+    "totalWallTime": 6.4129203
+  },
+  "ekf": {
+    "positionRMSE": 0.039742697863312,
+    "positionMax": 0.08246523689019776,
+    "positionAxisRMSE": [
+      0.028555420009776768,
+      0.026908329753686917,
+      0.0063254890235136772
+    ],
+    "estimatedPositionRMSE": 0.013452116431780684,
+    "maxAbsRollPitchDeg": [
+      4.8996191473659563,
+      3.7599772743665052
+    ],
+    "maxAbsBodyRatesDeg": [
+      13.949620237572375,
+      11.191047666267465,
+      56.148942389272683
+    ],
+    "minRotorThrust": [
+      2.6158254743433527,
+      2.6204642204786386,
+      2.6261416878202173,
+      2.6102901619419843
+    ],
+    "maxRotorThrust": [
+      3.326574223837039,
+      3.2495111087937936,
+      3.312366759899847,
+      3.2468196448679221
+    ],
+    "rotorViolationSamples": 0,
+    "attitudeViolationSamples": 0,
+    "rateViolationSamples": 0,
+    "solveMean": 0.071357773749999992,
+    "solveMax": 0.1933444,
+    "solveP95": 0.1157009,
+    "deadlineMisses": 871,
+    "controlUpdates": 1200,
+    "fallbackCount": 0,
+    "nonpositiveExitCount": 0,
+    "gnssRejected": 2,
+    "twoSigmaCoverage": [
+      0.94084319280119977,
+      0.95434094317613727,
+      0.9925012497917014,
+      0.94767538743542745,
+      0.93701049825029159,
+      0.99450091651391437,
+      0.9790034994167639,
+      0.97217130478253622,
+      0.95700716547242126,
+      0.96917180469921682,
+      1,
+      0.91918013664389264,
+      0.98533577737043831,
+      0.96650558240293283,
+      0.94984169305115818
+    ],
+    "finalTime": 60,
+    "seed": 6224,
+    "totalWallTime": 91.0081343
+  },
+  "truth": {
+    "positionRMSE": 0.0084356038556962429,
+    "positionMax": 0.0233689203363633,
+    "positionAxisRMSE": [
+      0.0054796144330090564,
+      0.0064068899398435795,
+      0.00029154652206334037
+    ],
+    "estimatedPositionRMSE": 0.013405868954552733,
+    "maxAbsRollPitchDeg": [
+      4.139788138442186,
+      2.9431073584330472
+    ],
+    "maxAbsBodyRatesDeg": [
+      4.1121970724883958,
+      5.14846693502482,
+      58.935300766371434
+    ],
+    "minRotorThrust": [
+      2.6579481145596953,
+      2.6711004793068223,
+      2.6588137922522797,
+      2.6645138157149058
+    ],
+    "maxRotorThrust": [
+      3.2386503327088683,
+      3.2310187864061892,
+      3.2432427725454249,
+      3.2326088423830517
+    ],
+    "rotorViolationSamples": 0,
+    "attitudeViolationSamples": 0,
+    "rateViolationSamples": 0,
+    "solveMean": 0.043841093583333338,
+    "solveMax": 0.128709,
+    "solveP95": 0.0739405,
+    "deadlineMisses": 533,
+    "controlUpdates": 1200,
+    "fallbackCount": 0,
+    "nonpositiveExitCount": 0,
+    "gnssRejected": 2,
+    "twoSigmaCoverage": [
+      0.94234294284285958,
+      0.95184135977337114,
+      0.9925012497917014,
+      0.95034160973171133,
+      0.93517747042159638,
+      0.99333444425929007,
+      0.9955007498750208,
+      0.94867522079653388,
+      0.96650558240293283,
+      0.99650058323612734,
+      1,
+      0.91984669221796367,
+      0.97317113814364276,
+      0.98300283286118983,
+      0.97267122146308949
+    ],
+    "finalTime": 60,
+    "seed": 6224,
+    "totalWallTime": 58.5112553
+  },
+  "codeAnalyzer": [
+    {
+      "file": "C:\\Users\\hzy\\Documents\\Codex\\2026-09-20\\fe\\outputs\\quadrotor_merged\\test_sensors.m",
+      "messages": [
+        {
+          "id": "HIST",
+          "message": "建议不要使用 'hist'。请对代码进行相应更改后改用 'histogram'。",
+          "fix": 0,
+          "line": 57,
+          "column": [
+            21,
+            24
+          ]
+        },
+        {
+          "id": "HIST",
+          "message": "建议不要使用 'hist'。请对代码进行相应更改后改用 'histogram'。",
+          "fix": 0,
+          "line": 67,
+          "column": [
+            21,
+            24
+          ]
+        },
+        {
+          "id": "HIST",
+          "message": "建议不要使用 'hist'。请对代码进行相应更改后改用 'histogram'。",
+          "fix": 0,
+          "line": 91,
+          "column": [
+            21,
+            24
+          ]
+        }
+      ]
+    },
+    {
+      "file": "C:\\Users\\hzy\\Documents\\Codex\\2026-09-20\\fe\\outputs\\quadrotor_merged\\validate_merged_project.m",
+      "messages": [
+        {
+          "id": "MSNU",
+          "message": "此处之前隐藏了一条代码分析器消息，但该消息不再产生。",
+          "fix": 1,
+          "line": 4,
+          "column": [
+            42,
+            52
+          ]
+        },
+        {
+          "id": "MSNU",
+          "message": "此处之前隐藏了一条代码分析器消息，但该消息不再产生。",
+          "fix": 1,
+          "line": 7,
+          "column": [
+            40,
+            50
+          ]
+        },
+        {
+          "id": "MSNU",
+          "message": "此处之前隐藏了一条代码分析器消息，但该消息不再产生。",
+          "fix": 1,
+          "line": 9,
+          "column": [
+            74,
+            84
+          ]
+        }
+      ]
+    }
+  ],
+  "completed": "2026-09-23 11:32:59",
+  "passed": true
+}

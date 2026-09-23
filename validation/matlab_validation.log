@@ -1,0 +1,121 @@
+PASS physics              0.02 s
+PASS rotations            0.01 s
+PASS trajectory           0.05 s
+PASS MPC gradients        0.11 s
+PASS EKF covariance       0.05 s
+PASS NMPC hover           0.69 s
+PASS ENU/FLU frames       0.00 s
+PASS Startup continuity   0.01 s
+PASS Constraint boundaries 0.00 s
+    {'80 randomized plant/predictor derivative and RK4 comparisons'}
+    {'Trajectory passthrough including non-default parameters'     }
+    {'100-step direct/adapter EKF equality and positive covariance'}
+    {'Sensor specific force and returned-bias timing'              }
+
+PASS original test_quadrotorDynamics.m
+PASS original test_generate_trajectory.m
+PASS original test_sensors.m
+PASS original EKF part\test_ekf.m
+Run merged_smoke_3s: 3.00 s, ekf feedback, 20 prediction steps
+                positionRMSE: 0.0392
+                 positionMax: 0.0679
+            positionAxisRMSE: [3×1 double]
+       estimatedPositionRMSE: 0.0171
+          maxAbsRollPitchDeg: [2×1 double]
+          maxAbsBodyRatesDeg: [3×1 double]
+              minRotorThrust: [4×1 double]
+              maxRotorThrust: [4×1 double]
+       rotorViolationSamples: 0
+    attitudeViolationSamples: 0
+        rateViolationSamples: 0
+                   solveMean: 0.1019
+                    solveMax: 0.1849
+                    solveP95: 0.1688
+              deadlineMisses: 57
+              controlUpdates: 60
+               fallbackCount: 0
+        nonpositiveExitCount: 0
+                gnssRejected: 0
+            twoSigmaCoverage: [15×1 double]
+                   finalTime: 3
+                        seed: 6224
+               totalWallTime: 6.4129
+
+Saved: C:\Users\hzy\Documents\Codex\2026-09-20\fe\outputs\quadrotor_merged\results\merged_smoke_3s
+Run merged_ekf_60s: 60.00 s, ekf feedback, 20 prediction steps
+  t=5.0 s, position error=0.039 m, elapsed=9.3 s
+  t=10.0 s, position error=0.032 m, elapsed=16.0 s
+  t=15.0 s, position error=0.024 m, elapsed=22.6 s
+  t=20.0 s, position error=0.034 m, elapsed=29.7 s
+  t=25.0 s, position error=0.038 m, elapsed=36.3 s
+  t=30.0 s, position error=0.068 m, elapsed=43.4 s
+  t=35.0 s, position error=0.060 m, elapsed=50.2 s
+  t=40.0 s, position error=0.042 m, elapsed=57.3 s
+  t=45.0 s, position error=0.018 m, elapsed=64.9 s
+  t=50.0 s, position error=0.037 m, elapsed=73.5 s
+  t=55.0 s, position error=0.019 m, elapsed=82.1 s
+  t=60.0 s, position error=0.017 m, elapsed=91.0 s
+                positionRMSE: 0.0397
+                 positionMax: 0.0825
+            positionAxisRMSE: [3×1 double]
+       estimatedPositionRMSE: 0.0135
+          maxAbsRollPitchDeg: [2×1 double]
+          maxAbsBodyRatesDeg: [3×1 double]
+              minRotorThrust: [4×1 double]
+              maxRotorThrust: [4×1 double]
+       rotorViolationSamples: 0
+    attitudeViolationSamples: 0
+        rateViolationSamples: 0
+                   solveMean: 0.0714
+                    solveMax: 0.1933
+                    solveP95: 0.1157
+              deadlineMisses: 871
+              controlUpdates: 1200
+               fallbackCount: 0
+        nonpositiveExitCount: 0
+                gnssRejected: 2
+            twoSigmaCoverage: [15×1 double]
+                   finalTime: 60
+                        seed: 6224
+               totalWallTime: 91.0081
+
+Saved: C:\Users\hzy\Documents\Codex\2026-09-20\fe\outputs\quadrotor_merged\results\merged_ekf_60s
+Run merged_truth_60s: 60.00 s, truth feedback, 20 prediction steps
+  t=5.0 s, position error=0.010 m, elapsed=4.0 s
+  t=10.0 s, position error=0.006 m, elapsed=8.2 s
+  t=15.0 s, position error=0.005 m, elapsed=12.5 s
+  t=20.0 s, position error=0.016 m, elapsed=17.0 s
+  t=25.0 s, position error=0.017 m, elapsed=20.9 s
+  t=30.0 s, position error=0.008 m, elapsed=25.3 s
+  t=35.0 s, position error=0.009 m, elapsed=30.0 s
+  t=40.0 s, position error=0.013 m, elapsed=35.7 s
+  t=45.0 s, position error=0.008 m, elapsed=41.2 s
+  t=50.0 s, position error=0.007 m, elapsed=46.5 s
+  t=55.0 s, position error=0.004 m, elapsed=52.6 s
+  t=60.0 s, position error=0.006 m, elapsed=58.5 s
+                positionRMSE: 0.0084
+                 positionMax: 0.0234
+            positionAxisRMSE: [3×1 double]
+       estimatedPositionRMSE: 0.0134
+          maxAbsRollPitchDeg: [2×1 double]
+          maxAbsBodyRatesDeg: [3×1 double]
+              minRotorThrust: [4×1 double]
+              maxRotorThrust: [4×1 double]
+       rotorViolationSamples: 0
+    attitudeViolationSamples: 0
+        rateViolationSamples: 0
+                   solveMean: 0.0438
+                    solveMax: 0.1287
+                    solveP95: 0.0739
+              deadlineMisses: 533
+              controlUpdates: 1200
+               fallbackCount: 0
+        nonpositiveExitCount: 0
+                gnssRejected: 2
+            twoSigmaCoverage: [15×1 double]
+                   finalTime: 60
+                        seed: 6224
+               totalWallTime: 58.5113
+
+Saved: C:\Users\hzy\Documents\Codex\2026-09-20\fe\outputs\quadrotor_merged\results\merged_truth_60s
+MERGED_VALIDATION_FINISHED original_tests_all_pass=1
