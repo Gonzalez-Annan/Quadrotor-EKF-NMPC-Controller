@@ -38,7 +38,7 @@ c.mpc.positionWeight=[30;30;45]; c.mpc.velocityWeight=[5;5;8];
 c.mpc.attitudeWeight=12; c.mpc.rateWeight=[0.15;0.15;0.25];
 c.mpc.inputWeight=0.03; c.mpc.slewWeight=0.15; c.mpc.terminalMultiplier=4;
 c.mpc.integrationSubsteps=2; c.mpc.maxConsecutiveFailures=5;
-c.makePlots=true; c.makeVideo=false; c.figureVisible='off';
+c.makePlots=true; c.makeVideo=true; c.figureVisible='on';
 c.outputRoot=fullfile(fileparts(mfilename('fullpath')),'results');
 c.runName='';
 % ROS interface: configuration must match the Gazebo bridge/adapter.

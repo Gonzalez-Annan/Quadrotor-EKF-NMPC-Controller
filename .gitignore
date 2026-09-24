@@ -25,3 +25,17 @@ test4_*.png
 *.prj
 resources/project/
 .gitattributes
+
+# Simulation run outputs regenerate on every run -- don't commit them,
+# except the one example kept as a fallback if live execution fails.
+results/2*/
+!results/example_run/
+!results/example_run/**
+
+# Dev-validation tooling output (regenerate via validate_merged_project.m)
+validation/
+
+# run_benchmarks.m / validate_merged_project.m output folders (not timestamped)
+results/merged_*/
+results/baseline_truth/
+results/ekf_seed_*/

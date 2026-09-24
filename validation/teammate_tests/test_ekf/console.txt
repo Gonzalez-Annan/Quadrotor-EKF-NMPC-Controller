@@ -1,6 +1,0 @@
---- EKF hover consistency ---
-Min per-state +-2sigma coverage: 91.8% (threshold 90%)
-Final position std: 0.0083 m (initial 0.05 m)
-GNSS accepted/rejected: 600 / 0
-Accel bias est vs truth: [0.0069 0.0119 0.0091] vs [0.0200 -0.0285 0.0084]
-PASS ekf hover consistency

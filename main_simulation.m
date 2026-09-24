@@ -69,4 +69,15 @@ quad.export_results(result);
 if c.makePlots, quad.plot_results(result); end
 if c.makeVideo, quad.make_video(result); end
 disp(result.metrics); fprintf('Saved: %s\n',outdir);
+if c.makeVideo
+    videoPath = fullfile(outdir,'required','flight_visualization.avi');
+    fprintf('\n');
+    fprintf('****************************************************************\n');
+    fprintf('***                                                          ***\n');
+    fprintf('***   THE VIDEO DOES NOT OPEN AUTOMATICALLY.                 ***\n');
+    fprintf('***   >>> PLEASE LOOK INSIDE THE RESULTS FOLDER FOR IT <<<   ***\n');
+    fprintf('***                                                          ***\n');
+    fprintf('****************************************************************\n');
+    fprintf('%s\n\n', videoPath);
+end
 end

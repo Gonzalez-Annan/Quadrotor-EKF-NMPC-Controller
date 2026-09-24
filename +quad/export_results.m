@@ -1,5 +1,7 @@
 function export_results(r)
 L=r.log; d=r.outputDir;
+extraDir=fullfile(d,'extra'); if ~isfolder(extraDir), mkdir(extraDir); end
+d=extraDir;
 f=fopen(fullfile(d,'metrics.json'),'w','n','UTF-8');
 guard=onCleanup(@()fclose(f)); fprintf(f,'%s',jsonencode(r.metrics,'PrettyPrint',true)); clear guard;
 f=fopen(fullfile(d,'configuration.json'),'w','n','UTF-8');
