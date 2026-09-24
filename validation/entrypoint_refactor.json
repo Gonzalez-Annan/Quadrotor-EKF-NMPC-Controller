@@ -1,0 +1,15 @@
+{
+  "change": "START_HERE merged into main_simulation script",
+  "defaultDurationSeconds": 60,
+  "parameterizedFunction": "run_simulation",
+  "algorithmBodyUnchanged": true,
+  "parameterizedCallersUpdated": [
+    "run_benchmarks.m",
+    "validate_merged_project.m"
+  ],
+  "teammatePreservedFilesUnchanged": true,
+  "runtimeRerun": true,
+  "priorValidationAppliesTo": "Numerical algorithm unchanged; refactored top-level script additionally validated on 2026-09-24.",
+  "historicalRuntimeBlocker": "MATLAB batch startup: File system inconsistency",
+  "runtimeEvidence": "entrypoint_runtime.json"
+}

@@ -29,11 +29,11 @@ try
     end
     cd(root);
     c=project_config(); c.duration=3; c.makePlots=false; c.runName='merged_smoke_3s';
-    smoke=main_simulation(c); checkRun(smoke); summary.smoke=smoke.metrics;
+    smoke=run_simulation(c); checkRun(smoke); summary.smoke=smoke.metrics;
     c=project_config(); c.runName='merged_ekf_60s'; c.makePlots=true;
-    full=main_simulation(c); checkRun(full); summary.ekf=full.metrics;
+    full=run_simulation(c); checkRun(full); summary.ekf=full.metrics;
     c=project_config(); c.feedback='truth'; c.runName='merged_truth_60s'; c.makePlots=false;
-    baseline=main_simulation(c); checkRun(baseline); summary.truth=baseline.metrics;
+    baseline=run_simulation(c); checkRun(baseline); summary.truth=baseline.metrics;
     files=dir(fullfile(root,'**','*.m')); issues=struct('file',{},'messages',{});
     for k=1:numel(files)
         f=fullfile(files(k).folder,files(k).name);

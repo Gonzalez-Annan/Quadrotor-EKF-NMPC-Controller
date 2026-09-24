@@ -39,8 +39,8 @@
   "thrustMax": 5.5,
   "tiltMax": 0.6108652381980153,
   "rateMax": [
-    3.1415926535897931,
-    3.1415926535897931,
+    3.141592653589793,
+    3.141592653589793,
     1.5707963267948966
   ],
   "hover": [
@@ -93,9 +93,9 @@
       0.01
     ],
     "initialAttitudeError": [
-      0.0052359877559829881,
-      -0.0052359877559829881,
-      0.0087266462599716477
+      0.005235987755982988,
+      -0.005235987755982988,
+      0.008726646259971648
     ],
     "initialStd": [
       0.05,
@@ -104,9 +104,9 @@
       0.1,
       0.1,
       0.1,
-      0.034906585039886591,
-      0.034906585039886591,
-      0.034906585039886591,
+      0.03490658503988659,
+      0.03490658503988659,
+      0.03490658503988659,
       0.08,
       0.08,
       0.08,
@@ -135,7 +135,7 @@
     ],
     "inputMap": [
       [
-        0.29999999999999988,
+        0.2999999999999999,
         -0.01388888888888889,
         -0.01388888888888889,
         -0.36666666666666664
@@ -160,7 +160,7 @@
       ]
     ],
     "maxIterations": 40,
-    "constraintTolerance": 1E-5,
+    "constraintTolerance": 1e-05,
     "acceptTolerance": 0.0001,
     "optimalityTolerance": 0.03,
     "positionWeight": [
@@ -189,38 +189,5 @@
   "makeVideo": false,
   "figureVisible": "off",
   "outputRoot": "C:\\Users\\hzy\\Documents\\Codex\\2026-09-20\\fe\\outputs\\quadrotor_merged\\results",
-  "runName": "merged_smoke_3s",
-  "ros": {
-    "domainID": 0,
-    "nodeName": "/matlab_quadrotor",
-    "imuTopic": "/quad/imu",
-    "positionTopic": "/quad/position",
-    "truthTopic": "/quad/truth",
-    "commandTopic": "/quad/thrust_cmd",
-    "timeout": 15,
-    "maxImuGap": 0.035,
-    "maxQueueLag": 0.15,
-    "worldFrame": "ENU",
-    "bodyFrame": "FLU",
-    "initialPosition": [
-      0,
-      0,
-      -2
-    ],
-    "initialVelocity": [
-      0,
-      0,
-      0
-    ],
-    "initialQuaternion": [
-      0.89442719099991586,
-      0,
-      0,
-      0.44721359549995793
-    ],
-    "warmupSeconds": 3,
-    "transitionSeconds": 4,
-    "requireTruth": false,
-    "commandType": "std_msgs/Float64MultiArray"
-  }
+  "runName": "merged_smoke_3s"
 }

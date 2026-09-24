@@ -41,17 +41,4 @@ c.mpc.integrationSubsteps=2; c.mpc.maxConsecutiveFailures=5;
 c.makePlots=true; c.makeVideo=false; c.figureVisible='off';
 c.outputRoot=fullfile(fileparts(mfilename('fullpath')),'results');
 c.runName='';
-% ROS interface: configuration must match the Gazebo bridge/adapter.
-c.ros.domainID=0; c.ros.nodeName='/matlab_quadrotor';
-c.ros.imuTopic='/quad/imu'; c.ros.positionTopic='/quad/position';
-c.ros.truthTopic='/quad/truth'; c.ros.commandTopic='/quad/thrust_cmd';
-c.ros.timeout=15; c.ros.maxImuGap=0.035; c.ros.maxQueueLag=0.15;
-c.ros.worldFrame='ENU'; c.ros.bodyFrame='FLU';
-c.ros.initialPosition=[0;0;-2]; c.ros.initialVelocity=zeros(3,1);
-c.ros.initialQuaternion=quad.Math.fromEuler(0,0,atan2(1,0.75));
-c.ros.warmupSeconds=3; c.ros.transitionSeconds=4;
-c.ros.requireTruth=false;
-c.ros.commandType='std_msgs/Float64MultiArray';
-% The external adapter MUST map data=[T0 T1 T2 T3] N into rotor forces.
-% This topic is NOT directly a Gazebo motor-speed command.
 end

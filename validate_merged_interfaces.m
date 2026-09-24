@@ -1,5 +1,5 @@
 function report=validate_merged_interfaces()
-%VALIDATE_MERGED_INTERFACES Optional ROS loopback plus public API checks.
+%VALIDATE_MERGED_INTERFACES Offline public API checks and Code Analyzer report.
 root=setup_project(); report.matlab=version; report.time=char(datetime('now'));
 c=project_config(); p=integration.to_params(c); r=quad.reference(0,c);
 e=ekf('init',r.x,p,true); e=ekf('predict',e,[0;0;-c.g],zeros(3,1),c.dt,p);
@@ -8,7 +8,6 @@ assert(numel(x)==13 && all(isfinite(x)));
 ctrl=quad.mpc_init(c); [u,~,info]=nmpc(r.x,0,ctrl,c);
 assert(~info.fallback && all(u>=c.thrustMin & u<=c.thrustMax));
 report.publicAPIs=true;
-report.ros=test_ros_interface();
 files=dir(fullfile(root,'**','*.m')); report.codeAnalyzer=struct('file',{},'messages',{});
 for k=1:numel(files)
     f=fullfile(files(k).folder,files(k).name);

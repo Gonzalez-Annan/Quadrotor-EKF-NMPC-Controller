@@ -1,0 +1,57 @@
+MATLAB: 26.1.0.3312084 (R2026a) Update 4
+Installed products: 116
+Optimization: 1 | MPC Toolbox: 1
+Simulation needs Optimization Toolbox.
+This implementation uses fmincon directly; nlmpc is not a runtime dependency.
+PASS physics              0.01 s
+PASS rotations            0.00 s
+PASS trajectory           0.01 s
+PASS MPC gradients        0.04 s
+PASS EKF covariance       0.02 s
+PASS NMPC hover           0.09 s
+PASS Constraint boundaries 0.00 s
+    {'80 randomized plant/predictor derivative and RK4 comparisons'}
+    {'Trajectory passthrough including non-default parameters'     }
+    {'100-step direct/adapter EKF equality and positive covariance'}
+    {'Sensor specific force and returned-bias timing'              }
+
+Run 20260924_112940_127: 60.00 s, ekf feedback, 20 prediction steps
+  t=5.0 s, position error=0.039 m, elapsed=10.6 s
+  t=10.0 s, position error=0.032 m, elapsed=18.4 s
+  t=15.0 s, position error=0.024 m, elapsed=25.9 s
+  t=20.0 s, position error=0.034 m, elapsed=34.2 s
+  t=25.0 s, position error=0.038 m, elapsed=41.8 s
+  t=30.0 s, position error=0.068 m, elapsed=49.7 s
+  t=35.0 s, position error=0.060 m, elapsed=57.4 s
+  t=40.0 s, position error=0.042 m, elapsed=66.4 s
+  t=45.0 s, position error=0.018 m, elapsed=74.9 s
+  t=50.0 s, position error=0.037 m, elapsed=83.8 s
+  t=55.0 s, position error=0.019 m, elapsed=94.2 s
+  t=60.0 s, position error=0.017 m, elapsed=103.2 s
+                positionRMSE: 0.0397
+                 positionMax: 0.0825
+            positionAxisRMSE: [3×1 double]
+       estimatedPositionRMSE: 0.0135
+          maxAbsRollPitchDeg: [2×1 double]
+          maxAbsBodyRatesDeg: [3×1 double]
+              minRotorThrust: [4×1 double]
+              maxRotorThrust: [4×1 double]
+       rotorViolationSamples: 0
+    attitudeViolationSamples: 0
+        rateViolationSamples: 0
+                   solveMean: 0.0813
+                    solveMax: 0.2156
+                    solveP95: 0.1328
+              deadlineMisses: 1155
+              controlUpdates: 1200
+               fallbackCount: 0
+        nonpositiveExitCount: 0
+                gnssRejected: 2
+            twoSigmaCoverage: [15×1 double]
+                   finalTime: 60
+                        seed: 6224
+               totalWallTime: 103.2575
+
+Saved: C:\Users\hzy\Documents\Codex\2026-09-20\fe\outputs\quadrotor_merged\results\20260924_112940_127
+MERGED_INTERFACE_VALIDATION_FINISHED
+OFFLINE_ONLY_VALIDATION_PASS

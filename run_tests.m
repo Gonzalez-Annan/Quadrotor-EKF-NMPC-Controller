@@ -1,18 +1,11 @@
 function report=run_tests()
 % Meaningful numerical checks of physics, geometry, derivatives, and EKF.
-c=project_config(); tests={@physics,@rotations,@trajectory,@derivatives,@filter,@controller,@frameConventions,@startup,@constraintBounds};
-names={'physics','rotations','trajectory','MPC gradients','EKF covariance','NMPC hover','ENU/FLU frames','Startup continuity','Constraint boundaries'};
+c=project_config(); tests={@physics,@rotations,@trajectory,@derivatives,@filter,@controller,@constraintBounds};
+names={'physics','rotations','trajectory','MPC gradients','EKF covariance','NMPC hover','Constraint boundaries'};
 for k=1:numel(tests)
     ticID=tic; tests{k}(c); fprintf('PASS %-20s %.2f s\n',names{k},toc(ticID));
 end
 report.passed=names; report.matlab=version; report.time=char(datetime('now'));
-end
-function frameConventions(c)
-[W,B]=quad.frames(c); q=quad.Math.exp([.2;-.3;.4]);
-R=quad.Math.rot(q); converted=W*R*B'; recovered=W'*converted*B;
-assert(norm(recovered-R,'fro')<1e-12);
-assert(norm(W*[2;3;4]-[3;2;-4])<1e-12);
-assert(norm(c.mix*c.mpc.inputMap-diag([c.mass;c.J]),'fro')<1e-12);
 end
 function constraintBounds(c)
 x=[zeros(6,1);quad.Math.fromEuler(30*pi/180,30*pi/180,0);zeros(3,1)];
@@ -25,20 +18,12 @@ x(7:10)=[1;0;0;0]; x(11:13)=c.rateMax;
 assert(abs(max(quad.state_constraints(x,c)))<1e-12);
 x(13)=1.01*c.rateMax(3); assert(max(quad.state_constraints(x,c))>0);
 end
-function startup(c)
-tt=c.ros.warmupSeconds+c.ros.transitionSeconds;
-before=quad.ros_reference(tt-1e-6,c); after=quad.reference(0,c);
-assert(norm(before.p-after.p)<2e-6);
-assert(norm(before.v-after.v)<2e-6);
-assert(norm(before.a-after.a)<1e-5);
-start=quad.ros_reference(c.ros.warmupSeconds,c);
-assert(norm(start.p-c.ros.initialPosition)<1e-12 && norm(start.v)<1e-12);
-end
 function physics(c)
 x=[zeros(6,1);1;zeros(6,1)];
 assert(norm(quad.dynamics(x,c.hover,c))<1e-12,'Hover is not an equilibrium.');
 d=quad.dynamics(x,zeros(4,1),c); assert(abs(d(6)-c.g)<1e-12);
 u=c.hover+[.1;.1;-.1;-.1]; d=quad.dynamics(x,u,c);
+assert(norm(c.mix*c.mpc.inputMap-diag([c.mass;c.J]),'fro')<1e-12);
 assert(d(11)<0 && abs(d(12))<1e-10 && abs(d(13))<1e-10,'Mixer mismatch.');
 x(11:13)=[.2;-.3;.1]; y=quad.step(x,c.hover,.5,c,100);
 assert(abs(norm(y(7:10))-1)<1e-12);

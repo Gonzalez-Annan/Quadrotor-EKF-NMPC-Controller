@@ -1,5 +1,5 @@
 function path=make_video(r)
-% Recorded MATLAB flight visualization, not a Gazebo recording.
+% Recorded MATLAB flight visualization.
 L=r.log; c=r.config; path=fullfile(r.outputDir,'flight_visualization.mp4');
 fps=20; stride=max(1,round(1/(fps*c.dt))); indices=1:stride:numel(L.t);
 f=figure('Visible','off','Color','w','Position',[50 50 1280 720]);

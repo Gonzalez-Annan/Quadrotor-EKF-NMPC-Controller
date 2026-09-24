@@ -63,7 +63,7 @@
     "tf": 60
   },
   "seed": 6224,
-  "feedback": "truth",
+  "feedback": "ekf",
   "sensor": {
     "accelSigma": 0.08,
     "gyroSigma": 0.015,
@@ -185,9 +185,9 @@
     "integrationSubsteps": 2,
     "maxConsecutiveFailures": 5
   },
-  "makePlots": false,
+  "makePlots": true,
   "makeVideo": false,
   "figureVisible": "off",
   "outputRoot": "C:\\Users\\hzy\\Documents\\Codex\\2026-09-20\\fe\\outputs\\quadrotor_merged\\results",
-  "runName": "merged_truth_60s"
+  "runName": "20260924_090359_960"
 }

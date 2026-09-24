@@ -39,8 +39,8 @@
   "thrustMax": 5.5,
   "tiltMax": 0.6108652381980153,
   "rateMax": [
-    3.141592653589793,
-    3.141592653589793,
+    3.1415926535897931,
+    3.1415926535897931,
     1.5707963267948966
   ],
   "hover": [
@@ -63,7 +63,7 @@
     "tf": 60
   },
   "seed": 6224,
-  "feedback": "truth",
+  "feedback": "ekf",
   "sensor": {
     "accelSigma": 0.08,
     "gyroSigma": 0.015,
@@ -93,9 +93,9 @@
       0.01
     ],
     "initialAttitudeError": [
-      0.005235987755982988,
-      -0.005235987755982988,
-      0.008726646259971648
+      0.0052359877559829881,
+      -0.0052359877559829881,
+      0.0087266462599716477
     ],
     "initialStd": [
       0.05,
@@ -104,9 +104,9 @@
       0.1,
       0.1,
       0.1,
-      0.03490658503988659,
-      0.03490658503988659,
-      0.03490658503988659,
+      0.034906585039886591,
+      0.034906585039886591,
+      0.034906585039886591,
       0.08,
       0.08,
       0.08,
@@ -135,7 +135,7 @@
     ],
     "inputMap": [
       [
-        0.2999999999999999,
+        0.29999999999999988,
         -0.01388888888888889,
         -0.01388888888888889,
         -0.36666666666666664
@@ -160,7 +160,7 @@
       ]
     ],
     "maxIterations": 40,
-    "constraintTolerance": 1e-05,
+    "constraintTolerance": 1E-5,
     "acceptTolerance": 0.0001,
     "optimalityTolerance": 0.03,
     "positionWeight": [
@@ -185,9 +185,9 @@
     "integrationSubsteps": 2,
     "maxConsecutiveFailures": 5
   },
-  "makePlots": false,
+  "makePlots": true,
   "makeVideo": false,
   "figureVisible": "off",
   "outputRoot": "C:\\Users\\hzy\\Documents\\Codex\\2026-09-20\\fe\\outputs\\quadrotor_merged\\results",
-  "runName": "merged_truth_60s"
+  "runName": "20260924_112940_127"
 }
